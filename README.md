@@ -1,5 +1,5 @@
 # SQL-scripts
-Some SQL scripts
+Some SQL scripts with queries.
 
 Tables were made by myself
 
