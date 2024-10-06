@@ -1,10 +1,10 @@
 create table t_USA_states (state varchar(255), capital_city varchar(255), area int(64));
 
-/* Fill the table with names of states in USA and their Capital city and area in km2 */
+-- Fill the table with names of states in USA and their Capital city and area in km2 
 INSERT INTO t_USA_states
 VALUES ('Západní Virginie(WV)', 'Charleston', '169634'), ('Wyoming(WY)', 'Cheyenne', '62755'), ('Wisconsin(WI)', 'Madison', '253335'), ('Washington(WA)', 'Olympia', '184661'), ('Virginie(VA)', 'Richmond', '110787'), ('Vermont(VT)', 'Montpelier', '24905'), ('Utah(UT)', 'Salt Lake City', '219882'), ('Texas(TX)', 'Austin', '695660'), ('Tennessee(TN)', 'Nashville', '109152'), ('Severní Karolína(NC)', 'Raleigh', '141297'), ('Severní Dakota(ND)', 'Bismarck', '314917'), ('Rhode Island(RI)', 'Providence', '4002'), ('Pensylvánie(PA)', 'Harrisburg', '119279'), ('Oregon(OR)', 'Salem', '254800'), ('Oklahoma(OK)', 'Oklahoma City', '181038'), ('Ohio(OH)', 'Columbus', '116099'), ('Nové Mexiko(NM)', 'Santa Fe', '24214'), ('New York(NY)', 'Albany', '22592'), ('New Jersey(NJ)', 'Trenton', '286380'), ('New Hampshire(NH)', 'Concord', '200330'), ('Nevada(NV)', 'Carson City', '380832'), ('Nebraska(NE)', 'Lincoln', '180540'), ('Montana(MT)', 'Helena', '125438'), ('Missouri(MO)', 'Jefferson City', '225163'), ('Mississippi(MS)', 'Jackson', '250488'), ('Minnesota(MN)', 'St. Paul', '27335'), ('Michigan(MI)', 'Lansing', '32131'), ('Massachusetts(MA)', 'Boston', '91634'), ('Maryland(MD)', 'Annapolis', '135658'), ('Maine(ME)', 'Augusta', '104656'), ('Louisiana(LA)', 'Baton Rouge', '213099'), ('Kentucky(KY)', 'Frankfort', '423968'), ('Kansas(KS)', 'Topeka', '82931'), ('Kalifornie(CA)', 'Sacramento', '269602'), ('Jižní Karolína(SC)', 'Columbia', '183107'), ('Jižní Dakota(SD)', 'Pierre', '139391'), ('Iowa(IA)', 'Des Moines', '199730'), ('Indiana(IN)', 'Indianapolis', '145746'), ('Illinois(IL)', 'Springfield', '94327'), ('Idaho(ID)', 'Boise', '149997'), ('Havaj(HI)', 'Honolulu', '216443'), ('Georgia(GA)', 'Atlanta', '28314'), ('Florida(FL)', 'Tallahassee', '153910'), ('Delaware(DE)', 'Dover', '170312'), ('Connecticut(CT)', 'Hartford', '6446'), ('Colorado(CO)', 'Denver', '14356'), ('Arkansas(AR)', 'Little Rock', '137733'), ('Arizona(AZ)', 'Phoenix', '295233'), ('Aljaška(AK)', 'Juneau', '1723337'), ('Alabama(AL)', 'Montgomery', '135767');
 
-/* Add new column - name of governor*/
+-- Add new column - name of governor
 ALTER TABLE t_USA_states ADD COLUMN `governor` VARCHAR(255);
 
 update t_USA_states set governor = 'Kay Ivey' where state = 'Alabama(AL)';
@@ -60,29 +60,29 @@ SET governor ='John Carney' WHERE state like '%Delaware%'; UPDATE t_USA_states
 SET governor ='Ned Lamont' WHERE state like '%Connecticut%'; UPDATE t_USA_states 
 SET governor ='Jared Polis' WHERE state like '%Colorado%'
 
-/* Order table by area from the lowest to the highest */
+-- Order table by area from the lowest to the highest
 select * from t_USA_states
 order by area asc;
 
-/* Find state Nevada */
+-- Find state Nevada
 select * from t_USA_states
 where state like "%Nevada%";
 
-/* Find state with the highest area */
+-- Find state with the highest area
 select * from t_USA_states
 order by area desc
 limit 1;
 
-/* Find state with the lowest area */
+-- Find state with the lowest area
 select * from t_USA_states
 order by area asc
 limit 1;
 
-/* Find Capital city of the state Washington */
+-- Find Capital city of the state Washington
 select capital_city from t_USA_states
 where state like "%Washington%"
 
-/* Find governor of Colorado */
+-- Find governor of Colorado
 select governor from t_USA_states
 where state like "%Colorado%"
 
