@@ -85,3 +85,11 @@ where state like "%Washington%"
 /* Find governor of Colorado */
 select governor from t_USA_states
 where state like "%Colorado%"
+
+-- mark state with area < 100 000 km2 as small and state with are > 500 000 km2 as huge
+select *,
+case when area < 100000 then 'small_state'
+	when area between 100000 and 500000 then 'avg_size'
+else 'huge_state'
+end as 'size'
+from t_USA_states
