@@ -1,4 +1,4 @@
-create table t_USA_states (state varchar(255), capital_city varchar(255), area int(64));
+create or replace table t_USA_states (state varchar(255), capital_city varchar(255), area int(64));
 
 -- Fill the table with names of states in USA and their Capital city and area in km2 
 INSERT INTO t_USA_states
